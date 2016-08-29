@@ -16,14 +16,14 @@ import {getExceptionTplPromise} from 'exception-html-template';
 
 ```bash
 
-//javascript es6
+// javascript es6
 app.use('*', (err, req, res, next)=> {
     getExceptionTplPromise(err, res.statusCode).then((htmlTpl)=> {
         res.send(htmlTpl);
     });
 });
 
-//typescript
+// typescript
 app.use('*', (err: any, req: Request, res: Response, next: NextFunction)=> {
     getExceptionTplPromise(err, res.statusCode).then((htmlTpl: string)=> {
         res.send(htmlTpl);
